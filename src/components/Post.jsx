@@ -40,10 +40,12 @@ export const Posts=()=>{
 const [postData, setPostData] =useState([]);
 const [sdata, setSdata] = useState("");
 
+//call the getData() in useEffect
 useEffect(()=>{
     getData();
 }, [])
 
+//fetch the data
    const getData=()=>{
      axios.get("https://jsonplaceholder.typicode.com/posts").then((data)=>{
         // console.log(data.data)
@@ -51,6 +53,8 @@ useEffect(()=>{
      })
    }
 
+
+   //filter for searching
    function result(){
    var arr=postData.filter((value)=>{
     if(sdata===""){
@@ -67,7 +71,7 @@ useEffect(()=>{
    console.log(postData)
    
 
-
+//render the data on browser
     return (
         <StyledDiv>
         <input type="text" onChange={(e)=>{setSdata(e.target.value)}} placeholder="Search" />
