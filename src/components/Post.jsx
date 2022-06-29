@@ -71,7 +71,7 @@ useEffect(()=>{
    console.log(postData)
    
 
-//render the data on browser
+//render the data on browser and mapping the data
     return (
         <StyledDiv>
         <input type="text" onChange={(e)=>{setSdata(e.target.value)}} placeholder="Search" />
